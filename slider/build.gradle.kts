@@ -1,7 +1,7 @@
 plugins {
-    kotlin("multiplatform") version "2.3.20"
-    kotlin("plugin.compose") version "2.3.20"
-    id("org.jetbrains.compose") version "1.12.2"
+    alias(baseLibs.plugins.kotlinMultiplatform)
+    alias(baseLibs.plugins.composeCompiler)
+    alias(baseLibs.plugins.composeMultiplatform)
 }
 kotlin {
     @OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
@@ -11,9 +11,9 @@ kotlin {
         binaries.executable()
     }
     sourceSets.wasmJsMain.dependencies {
-        implementation(compose.runtime)
-        implementation(compose.foundation)
-        implementation(compose.material3)
-        implementation(compose.ui)
+        implementation(baseLibs.jetbrains.compose.runtime)
+        implementation(baseLibs.jetbrains.compose.foundation)
+        implementation(baseLibs.jetbrains.compose.material3)
+        implementation(baseLibs.jetbrains.compose.ui)
     }
 }

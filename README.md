@@ -16,6 +16,13 @@ The blog frames a sample only after the reader clicks, in a sandboxed iframe, an
 
 Build locally: `cd slider && ./gradlew wasmJsBrowserDistribution`, output in `build/dist/wasmJs/productionExecutable/`.
 
+## Versions
+
+Kotlin, the Compose compiler plugin, Compose Multiplatform and the Compose libraries come from the version catalog
+of [mikepenz/convention](https://github.com/mikepenz/convention), declared as `baseLibs` in each sample's `settings.gradle.kts`.
+To update, raise the `com.mikepenz:version-catalog` version there, run `./gradlew kotlinWasmUpgradeYarnLock` and commit
+`kotlin-js-store/`. Update Gradle with `./gradlew wrapper --gradle-version <v> --gradle-distribution-sha256-sum <sha>` (run it twice).
+
 ## Security
 
 - Workflow token has no default permissions. Only the deploy job can write to Pages, and only from `main`.
