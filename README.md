@@ -10,9 +10,10 @@ The blog frames a sample only after the reader clicks, in a sandboxed iframe, an
 
 1. Copy `slider/` to a new folder. The name is lowercase letters, digits and dashes.
 2. Change `rootProject.name`, `outputModuleName`, `outputFileName` and the script name in `src/wasmJsMain/resources/index.html`.
-3. Keep the `Content-Security-Policy` meta tag in `index.html`. Pages cannot send headers, so that tag is the policy.
-4. Add the folder to `.github/dependabot.yml`.
-5. Push. In Storyblok, set the blok's `src` to the published URL.
+3. Keep the theme: the `Light` and `Dark` colour schemes in `Main.kt` use the blog's palette and switch with `isSystemInDarkTheme()`, and `index.html` sets the same two background colours so the frame is not white while the wasm loads.
+4. Keep the `Content-Security-Policy` meta tag in `index.html`. Pages cannot send headers, so that tag is the policy.
+5. Add the folder to `.github/dependabot.yml`.
+6. Push. In Storyblok, set the blok's `src` to the published URL.
 
 Build locally: `cd slider && ./gradlew wasmJsBrowserDistribution`, output in `build/dist/wasmJs/productionExecutable/`.
 

@@ -5,9 +5,11 @@
   <!-- GitHub Pages cannot send response headers, so the policy lives here. Same origin only; wasm may compile; nothing else. -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slider demo</title>
-  <style>html,body{margin:0;height:100%;overflow:hidden}</style>
+  <!-- Same surface colours as the Compose theme, so the frame is not white while the wasm loads. -->
+  <style>html,body{margin:0;height:100%;overflow:hidden;background:#fafaf6}@media (prefers-color-scheme:dark){html,body{background:#151b19}}</style>
   <script type="application/javascript" src="slider.js"></script>
 </head>
 <body></body>
